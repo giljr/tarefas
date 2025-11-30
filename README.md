@@ -1,24 +1,30 @@
-# README
+# Tarefas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Um projeto simples para demonstrar testes com **Cucumber** e **RSpec**.
 
-Things you may want to cover:
+## Clonar o projeto
 
-* Ruby version
+```bash
+git clone git@github.com:giljr/tarefas.git
+cd tarefas
+```
+Rodar os testes
 
-* System dependencies
+RSpec
+```
+bundle exec rspec
+```
+E o Cucumber:
+```
+bundle exec cucumber
+```
 
-* Configuration
 
-* Database creation
+### Tutorial:
 
-* Database initialization
 
-* How to run the test suite
+[Cucumber + RSpec:](https://medium.com/jungletronics/cucumber-rspec-testes-que-falam-e-testes-que-garantem-30170c7e7a99) Testes que Falam e Testes que Garantem
+Da especificação ao teste automatizado sem fricção
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+Bom trabalho e bons testes!

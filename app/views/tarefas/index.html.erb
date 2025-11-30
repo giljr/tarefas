@@ -1,0 +1,59 @@
+<h1>Listando Tarefas</h1>
+
+<h2>Tarefas Concluídas</h2>
+<section id="tarefas-concluidas" class="tarefas-concluidas">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Feito</th>
+        <th>Nota</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tarefas.where(feito: true).each do |tarefa| %>
+        <tr>
+          <td>true</td>
+          <td><%= tarefa.nota %></td>
+          <td><%= link_to 'Mostrar', tarefa %></td>
+          <td><%= link_to 'Editar', edit_tarefa_path(tarefa) %></td>
+          <td>
+            <%= link_to 'Apagar', tarefa, method: :delete, data: { confirm: 'Esta certo?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<h2>Tarefas Não Concluídas</h2>
+<section id="tarefas-nao-concluidas" class="tarefas-nao-concluidas">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Feito</th>
+        <th>Nota</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tarefas.where(feito: false).each do |tarefa| %>
+        <tr>
+          <td>false</td>
+          <td><%= tarefa.nota %></td>
+          <td><%= link_to 'Mostrar', tarefa %></td>
+          <td><%= link_to 'Editar', edit_tarefa_path(tarefa) %></td>
+          <td>
+            <%= link_to 'Apagar', tarefa, method: :delete, data: { confirm: 'Esta certo?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<br>
+
+<%= link_to 'Nova Tarefa', new_tarefa_path, class: 'btn btn-primary' %>

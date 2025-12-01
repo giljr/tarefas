@@ -6,17 +6,37 @@ RSpec.describe "Exibição de tarefas concluídas", type: :system do
     driven_by(:rack_test)
   end
 
-  it "exibe apenas tarefas concluídas na seção correta" do
-    # Arrange
-    criar_uma_tarefa_concluida_anotada("Lavar o carro")
-    criar_uma_tarefa_inconcluida_anotada("Estudar Ruby")
+  context "Ao visitar a página principal" do
+    before do
+      visitar_a_pagina_principal
+    end
 
-    # Act
-    visitar_a_pagina_principal
+    it "eu devo ver a seção tarefas concluídas" do
+      eu_devo_ver_a_secao_tarefas_concluidas
+    end
 
-    # Assert
-    eu_devo_ver_a_secao_tarefas_concluidas
-    eu_devo_ver_na_secao_concluidas_a_tarefa("Lavar o carro")
-    eu_nao_devo_ver_na_secao_concluidas_a_tarefa("Estudar Ruby")
+    context "Teste 1: criar uma tarefa concluída anotada (nota)" do
+      let!(:tarefa_concluida) { criar_uma_tarefa_concluida_anotada("Lavar o carro") }
+
+      before do
+        visitar_a_pagina_principal
+      end
+
+      it "eu devo ver na seção concluídas a tarefa (nota)" do
+        eu_devo_ver_na_secao_concluidas_a_tarefa("Lavar o carro")
+      end
+    end
+
+    context "Teste 2: criar uma tarefa inconcluída anotada (nota)" do
+      let!(:tarefa_inconcluida) { criar_uma_tarefa_inconcluida_anotada("Estudar Ruby") }
+
+      before do
+        visitar_a_pagina_principal
+      end
+
+      it "eu não devo ver na seção concluídas a tarefa (nota)" do
+        eu_nao_devo_ver_na_secao_concluidas_a_tarefa("Estudar Ruby")
+      end
+    end
   end
 end

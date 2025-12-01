@@ -1,6 +1,6 @@
 # features/step_definitions/tarefas_steps.rb
 
-Given("eu estou na página principal do app") do
+Given("eu estou na pagina principal do app") do
   visit "/"
 end
 
@@ -26,13 +26,13 @@ When("eu envio ambas as tarefas") do
   visit "/"
 end
 
-Then("eu devo ver {string} na seção {string}") do |texto, secao|
+Then("eu devo ver {string} na secao {string}") do |texto, secao|
   within(:xpath, "//*[contains(@class,'#{secao.parameterize}') or contains(@id,'#{secao.parameterize}')]") do
     expect(page).to have_content(texto)
   end
 end
 
-Then("eu não devo ver {string} na seção {string}") do |texto, secao|
+Then("eu nao devo ver {string} na secao {string}") do |texto, secao|
   within(:xpath, "//*[contains(@class,'#{secao.parameterize}') or contains(@id,'#{secao.parameterize}')]") do
     expect(page).not_to have_content(texto)
   end

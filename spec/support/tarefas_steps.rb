@@ -12,7 +12,7 @@ module TarefasSteps
     Tarefa.create!(nota: nota, feito: true)
   end
 
-  def criar_uma_tarefa_inconcluida_anotada(nota)
+  def criar_uma_tarefa_nao_concluida_anotada(nota)
     Tarefa.create!(nota: nota, feito: false)
   end
 

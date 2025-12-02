@@ -9,7 +9,7 @@ Given("existe uma tarefa concluida chamada {string}") do |nome|
 end
 
 Given("existe uma tarefa nao concluida chamada {string}") do |nome|
-  @tarefa_incompleta = Tarefa.create!(nota: nome, feito: false)
+  @tarefa_nao_concluida = Tarefa.create!(nota: nome, feito: false)
 end
 
 When("eu envio essa tarefa concluida") do

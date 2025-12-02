@@ -27,7 +27,7 @@ RSpec.describe "Exibição de tarefas concluídas", type: :system do
       end
     end
 
-    context "Teste 2: criar uma tarefa nao concluida anotada (nota)" do
+    context "Teste 2: criar uma tarefa não concluída anotada (nota)" do
       let!(:tarefa_nao_concluida) { criar_uma_tarefa_nao_concluida_anotada("Estudar Ruby") }
 
       before do

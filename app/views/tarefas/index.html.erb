@@ -12,7 +12,7 @@
     </thead>
 
     <tbody>
-      <% @tarefas.where(feito: true).each do |tarefa| %>
+      <% @tarefas_concluidas.each do |tarefa| %>
         <tr>
           <td>true</td>
           <td><%= tarefa.nota %></td>
@@ -39,7 +39,7 @@
     </thead>
 
     <tbody>
-      <% @tarefas.where(feito: false).each do |tarefa| %>
+      <% @tarefas_nao_concluidas.each do |tarefa| %>
         <tr>
           <td>false</td>
           <td><%= tarefa.nota %></td>

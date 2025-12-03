@@ -3,7 +3,8 @@ class TarefasController < ApplicationController
 
   # GET /tarefas or /tarefas.json
   def index
-    @tarefas = Tarefa.all
+    @tarefas_concluidas = Tarefa.concluidas
+    @tarefas_nao_concluidas = Tarefa.nao_concluidas
   end
 
   # GET /tarefas/1 or /tarefas/1.json

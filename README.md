@@ -161,7 +161,7 @@ Esses Episódios demonstram o uso de três tipos principais de testes:
 `System`, `Model` e `Request`.
 ```
 ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-                                Ⓡ Secretaria de Finanças do Estado de Rondônia
-                                       Todos os direitos reservados.
+                                Ⓡ Jungletronics
+                          Todos os direitos reservados.
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ```
